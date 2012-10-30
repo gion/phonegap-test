@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <link rel="stylesheet" href="css/sample-scoreace-theme.css" />
+        <style>
+            #leagues-wrapper{
+                padding : 10px;
+            }
+            .list-header{
+                font-weight: bold;
+            }
+            #leagues{
+                margin : 0;
+                padding : 0;
+            }
+            #leagues li{
+                list-style: none;
+            }/*
+            .league-prop:before{
+                content : "|";
+            }*/
+        </style>
+<!--        <script src="js/lib/jquery-1.8.2.min.js"></script>-->
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="js/lib/underscore-min.js"></script>
+        <script src="js/lib/backbone.js"></script>
+    </head>
+    <body>
+        <!-- LOGIN PAGE -->
+        <div data-role="page" id="login">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Header
+                </h3>
+            </div>
+            <div data-role="content" class="content">
+                <div id="login_wrapper">
+                    
+                    <form action="" id="login_form"  data-ajax="false">
+                        <h4 id="login_title">
+                            Login
+                        </h4>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup">
+                                <input name="" id="login_user" placeholder="Username" value="" type="text" />
+                            </fieldset>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup">
+                                <input name="" id="login_password" placeholder="Password" value="" type="password" />
+                            </fieldset>
+                        </div>
+                    <input id="login_submit" type="submit" data-inline="true" data-icon="arrow-r" data-iconpos="right" value="GO" data-mini="true" />
+                    </form>
+                </div>
+            </div>
+            <div id="footer_forgot" data-position="fixed" class="no-style">
+                <a id="forgot_password" target="_blank" href="#forgot-password">
+                    Forgot Password?
+                </a>
+            </div>
+        </div>
+
+        <!-- HOME PAGE -->
+        <div data-role="page" data-add-back-btn="true" data-back-btn-text="back" id="home">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Home
+                </h3>
+            </div>
+            <div class="leagues-wrapper">
+                <div class="ui-grid-b list-header">
+                    <div class="ui-block-a league-name league-prop">| league</div>
+                    <div class="ui-block-b league-score league-prop">| score</div>
+                    <div class="ui-block-c league-rank league-prop">| rank</div>
+                </div>
+                <ul data-role="list-view" class="leagues">
+
+                </ul>
+            </div>
+        </div>
+
+
+         <!-- LEAGUE PAGE -->
+        <div data-role="page" data-add-back-btn="true" data-back-btn-text="back" id="league-details">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    League
+                </h3>
+            </div>
+        </div>
+
+         <!-- RANKS PAGE -->
+        <div data-role="page" data-add-back-btn="true" data-back-btn-text="back" id="ranks">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Ranks
+                </h3>
+            </div>
+            <div class="leagues-wrapper">
+                <div class="ui-grid-b list-header">
+                    <div class="ui-block-a league-name league-prop">| league</div>
+                    <div class="ui-block-b league-score league-prop">| score</div>
+                    <div class="ui-block-c league-rank league-prop">| rank</div>
+                </div>
+                <ul data-role="list-view" class="leagues">
+
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/lib/jquery.mobile-1.2.0.js"></script>
+        <script src="js/main.js"></script>
+        <!--<script src="js/my.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                app.init();
+            });
+        </script>
+
+
+        <!-- templates -->
+        <script id="league-template" type="text/template">
+                <div class="ui-block-a league-name">| <%=name%></div>
+                <div class="ui-block-b league-score">| <%=score%></div>
+                <div class="ui-block-c league-rank">| <%=rank%></div>
+        </script>
+
+    </body>
+</html>
